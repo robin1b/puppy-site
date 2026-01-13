@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Doodlepups, trimsalon en opvang – modern, warm en betrouwbaar."
+    />
+    <title>Modern Doodles — Pups, Trimsalon & Opvang</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Skip link -->
+    <a class="skip-link" href="#main">Ga naar inhoud</a>
+
+    <!-- Header -->
+    <header class="site-header" data-elevate>
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="Home">
+          <span class="brand-mark" aria-hidden="true">🐶</span>
+          <span class="brand-text">
+            <strong>Modern Doodles</strong>
+            <small>Pups • Trimsalon • Opvang</small>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Hoofdnavigatie">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+            <span class="sr-only">Menu</span>
+          </button>
+
+          <div class="nav-menu" id="navMenu">
+            <a class="nav-link" href="#pups">Pups</a>
+            <a class="nav-link" href="#verzorging">Verzorging</a>
+            <a class="nav-link" href="#opvang">Opvang</a>
+            <a class="nav-link" href="#over-ons">Over ons</a>
+            <a class="nav-link" href="#reviews">Reviews</a>
+            <a class="nav-link" href="#contact">Contact</a>
+          </div>
+        </nav>
+
+        <div class="header-cta">
+          <div class="lang-switch" aria-label="Taal kiezen">
+            <button
+              class="lang-btn"
+              type="button"
+              data-lang="nl"
+              aria-pressed="true"
+              title="Nederlands"
+            >
+              🇳🇱
+            </button>
+            <button
+              class="lang-btn"
+              type="button"
+              data-lang="en"
+              aria-pressed="false"
+              title="English"
+            >
+              🇬🇧
+            </button>
+            <button
+              class="lang-btn"
+              type="button"
+              data-lang="es"
+              aria-pressed="false"
+              title="Español"
+            >
+              🇪🇸
+            </button>
+          </div>
+
+          <a class="btn btn-primary" href="#boeken">Boek afspraak</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" id="top">
+        <!-- Foto background + overlays -->
+
+        <div class="hero-media" aria-hidden="true">
+          <img src="assets/hero.png" alt="" />
+          <span class="hero-vignette"></span>
+          <span class="hero-grain"></span>
+        </div>
+
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <p class="badge">Huiselijk • Transparant • Nazorg</p>
+            <h1>
+              Je kunt geen geluk kopen,<br /><span class="accent"
+                >maar je kunt wel een doodlepup verwelkomen.</span
+              >
+            </h1>
+            <p class="lead">
+              Focus op welzijn, socialisatie en duidelijke communicatie. Ook
+              voor trimsessies en opvang ben je welkom.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-light" href="#pups">Bekijk beschikbare pups</a>
+              <a class="btn btn-primary" href="#boeken">Boek een afspraak</a>
+            </div>
+
+            <div class="hero-stats" aria-label="Kerncijfers">
+              <div class="stat">
+                <strong>4.9/5</strong>
+                <span>Google score</span>
+              </div>
+              <div class="stat">
+                <strong>120+</strong>
+                <span>Trimsessies/jaar</span>
+              </div>
+              <div class="stat">
+                <strong>Huiselijk</strong>
+                <span>Opvang in kleine groep</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card" role="region" aria-label="Snelle acties">
+            <div class="hero-card-top">
+              <h2>Snel kiezen</h2>
+              <p>Waar kunnen we je mee helpen?</p>
+            </div>
+
+            <div class="quick-grid">
+              <a class="quick-item" href="#pups">
+                <span class="qi-ico" aria-hidden="true">🐾</span>
+                <span class="qi-title">Doodlepups</span>
+                <span class="qi-sub"
+                  >Beschikbaar, nestplanning, wachtlijst</span
+                >
+              </a>
+              <a class="quick-item" href="#verzorging">
+                <span class="qi-ico" aria-hidden="true">✂️</span>
+                <span class="qi-title">Trimsalon</span>
+                <span class="qi-sub">Wassen, knippen, ontwollen, nagels</span>
+              </a>
+              <a class="quick-item" href="#opvang">
+                <span class="qi-ico" aria-hidden="true">🏡</span>
+                <span class="qi-title">Opvang</span>
+                <span class="qi-sub"
+                  >Dagopvang & logeeropvang met aandacht</span
+                >
+              </a>
+            </div>
+
+            <div class="hero-card-actions">
+              <a class="btn btn-primary btn-block" href="#boeken"
+                >Plan trim / intake</a
+              >
+              <a class="btn btn-ghost btn-block" href="#contact"
+                >Stel een vraag</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section class="section" aria-label="Diensten">
+        <div class="container">
+          <div class="section-head">
+            <h2>Alles onder één dak</h2>
+            <p>
+              Modern en overzichtelijk — pups, verzorging en opvang met dezelfde
+              zorgstandaard.
+            </p>
+          </div>
+
+          <div class="cards-3">
+            <article class="card" id="pups">
+              <div class="card-icon" aria-hidden="true">🐶</div>
+              <h3>Doodlepups</h3>
+              <p>
+                Beschikbaarheid, nestplanning en een duidelijke
+                wachtlijstprocedure.
+              </p>
+              <ul class="checklist">
+                <li>Huiselijke socialisatie</li>
+                <li>Transparant adoptieproces</li>
+                <li>Nazorg en begeleiding</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-primary" href="#beschikbaar">Bekijk pups</a>
+                <a class="btn btn-ghost" href="#wachtlijst">Wachtlijst</a>
+              </div>
+            </article>
+
+            <article class="card" id="verzorging">
+              <div class="card-icon" aria-hidden="true">🧴</div>
+              <h3>Trimsalon</h3>
+              <p>
+                Van puppy-kennismaking tot onderhoudsschema’s en complete trims.
+              </p>
+              <ul class="checklist">
+                <li>Wassen & föhnen</li>
+                <li>Knippen/ontwollen</li>
+                <li>Nagels & oogjes</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-primary" href="#boeken">Boek trimsessie</a>
+                <a class="btn btn-ghost" href="#prijzen">Prijzen</a>
+              </div>
+            </article>
+
+            <article class="card" id="opvang">
+              <div class="card-icon" aria-hidden="true">🦴</div>
+              <h3>Dag- & logeeropvang</h3>
+              <p>Kleinschalige opvang met vaste routines en huiselijke rust.</p>
+              <ul class="checklist">
+                <li>Proefmoment / intake</li>
+                <li>Vaccinatie-eisen</li>
+                <li>Updates & foto’s (optioneel)</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-primary" href="#opvang-info"
+                  >Lees voorwaarden</a
+                >
+                <a class="btn btn-ghost" href="#contact"
+                  >Vraag beschikbaarheid</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Available pups (example grid) -->
+      <section
+        class="section section-muted"
+        id="beschikbaar"
+        aria-label="Beschikbare pups"
+      >
+        <div class="container">
+          <div class="section-head">
+            <h2>Beschikbare pups</h2>
+            <p>Voorbeeldweergave — koppel dit later aan echte data of CMS.</p>
+          </div>
+
+          <div class="pup-grid">
+            <article class="pup-card">
+              <img
+                src="assets/pup1.png"
+                alt="Doodlepup in de tuin"
+                loading="lazy"
+              />
+              <div class="pup-body">
+                <div class="pup-top">
+                  <h3>Nova</h3>
+                  <span class="pill available">Beschikbaar</span>
+                </div>
+                <p>Speels, mensgericht. Geboren: 12/08</p>
+                <a class="btn btn-ghost btn-sm" href="#contact">Interesse</a>
+              </div>
+            </article>
+
+            <article class="pup-card">
+              <img
+                src="assets/pup2.png"
+                alt="Doodlepup op een zachte deken"
+                loading="lazy"
+              />
+              <div class="pup-body">
+                <div class="pup-top">
+                  <h3>Milo</h3>
+                  <span class="pill option">Optie</span>
+                </div>
+                <p>Rustig karakter. Geboren: 12/08</p>
+                <a class="btn btn-ghost btn-sm" href="#contact">Interesse</a>
+              </div>
+            </article>
+
+            <article class="pup-card">
+              <img
+                src="assets/pup3.png"
+                alt="Doodlepup die naar de camera kijkt"
+                loading="lazy"
+              />
+              <div class="pup-body">
+                <div class="pup-top">
+                  <h3>Luna</h3>
+                  <span class="pill reserved">Gereserveerd</span>
+                </div>
+                <p>Sociaal en zacht. Geboren: 12/08</p>
+                <a class="btn btn-ghost btn-sm" href="#contact">Meer info</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="inline-cta" id="wachtlijst">
+            <div>
+              <h3>Op de wachtlijst?</h3>
+              <p>
+                Vul het formulier in en we nemen contact op zodra er een match
+                is.
+              </p>
+            </div>
+            <a class="btn btn-primary" href="#contact">Aanmelden wachtlijst</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section" id="over-ons" aria-label="Over ons">
+        <div class="container about">
+          <div class="about-text">
+            <h2>Over ons</h2>
+            <p>
+              We bouwen aan een plek waar honden zich veilig voelen en baasjes
+              helder weten waar ze aan toe zijn. Dit is voorbeeldtekst: vervang
+              met het echte verhaal van je klant.
+            </p>
+
+            <ul class="checklist large">
+              <li>Gezondheid & welzijn voorop</li>
+              <li>Huiselijke socialisatie</li>
+              <li>Persoonlijke nazorg</li>
+              <li>Transparant adoptieprocAes</li>
+            </ul>
+
+            <div class="about-actions">
+              <a class="btn btn-ghost" href="#reviews">Lees reviews</a>
+              <a class="btn btn-primary" href="#boeken">Plan een afspraak</a>
+            </div>
+          </div>
+
+          <div class="about-media">
+            <img
+              src="assets/about.png"
+              alt="Baas met twee doodles in de buitenlucht"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Reviews (carousel) -->
+      <section class="section section-muted" id="reviews" aria-label="Reviews">
+        <div class="container">
+          <div class="section-head">
+            <h2>Klanten aan het woord</h2>
+            <p>Swipe/klik door de testimonials (demo met dummy reviews).</p>
+          </div>
+
+          <div class="carousel" data-carousel>
+            <button
+              class="car-btn"
+              type="button"
+              data-prev
+              aria-label="Vorige review"
+            >
+              ‹
+            </button>
+
+            <div class="car-track" data-track>
+              <article class="review">
+                <div class="stars" aria-label="5 sterren">★★★★★</div>
+                <p>
+                  “Super duidelijk proces en veel nazorg. Onze pup doet het
+                  geweldig!”
+                </p>
+                <span class="who">— Sarah</span>
+              </article>
+
+              <article class="review">
+                <div class="stars" aria-label="5 sterren">★★★★★</div>
+                <p>
+                  “Trimsessie was rustig en professioneel. Mooie afwerking!”
+                </p>
+                <span class="who">— Kevin</span>
+              </article>
+
+              <article class="review">
+                <div class="stars" aria-label="5 sterren">★★★★★</div>
+                <p>
+                  “Logeeropvang voelde huiselijk. Kreeg ook een foto-update,
+                  top.”
+                </p>
+                <span class="who">— Anke</span>
+              </article>
+            </div>
+
+            <button
+              class="car-btn"
+              type="button"
+              data-next
+              aria-label="Volgende review"
+            >
+              ›
+            </button>
+          </div>
+
+          <div class="rating-row">
+            <div class="rating-badge">
+              <strong>4.9</strong><span>/5</span>
+              <small>Gebaseerd op Google reviews</small>
+            </div>
+            <a class="btn btn-ghost" href="#contact"
+              >Vraag een kennismaking aan</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking CTA -->
+      <section class="cta-band" id="boeken" aria-label="Call to action">
+        <div class="container cta-inner">
+          <div>
+            <h2>Klaar om te plannen?</h2>
+            <p>
+              Trimbeurt, intake voor opvang of interesse in een pup: stuur ons
+              een bericht.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-light" href="#contact">Contact opnemen</a>
+            <a class="btn btn-primary" href="#contact">Boek / aanvraag</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Info blocks -->
+      <section class="section" id="opvang-info" aria-label="Praktische info">
+        <div class="container">
+          <div class="section-head">
+            <h2>Praktische info</h2>
+            <p>
+              Drie duidelijke blokken (zoals in je mockups), maar in moderne
+              stijl.
+            </p>
+          </div>
+
+          <div class="info-3" id="prijzen">
+            <article class="info">
+              <h3>Werkwijze pups</h3>
+              <p>
+                Kennismaking, reservatie, contract en ophaaldag. Heldere
+                stappen.
+              </p>
+              <a class="text-link" href="#contact">Vraag de stappenlijst →</a>
+            </article>
+            <article class="info">
+              <h3>Trimsalon beleid</h3>
+              <p>
+                No-show regels, vachtconditie, en advies voor onderhoud thuis.
+              </p>
+              <a class="text-link" href="#contact">Ontvang prijslijst →</a>
+            </article>
+            <article class="info">
+              <h3>Opvangeisen</h3>
+              <p>
+                Vaccinaties, sociale klik, proefmoment en dagelijkse routine.
+              </p>
+              <a class="text-link" href="#contact">Bekijk voorwaarden →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section section-muted" id="contact" aria-label="Contact">
+        <div class="container contact">
+          <div class="contact-card">
+            <h2>Contact</h2>
+            <p>
+              Vul dit formulier in (demo). In productie koppel je dit aan e-mail
+              / backend / CRM.
+            </p>
+
+            <form class="form" id="contactForm">
+              <div class="form-row">
+                <label>
+                  Naam
+                  <input name="name" type="text" autocomplete="name" required />
+                </label>
+                <label>
+                  E-mail
+                  <input
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                  />
+                </label>
+              </div>
+
+              <label>
+                Waarover gaat het?
+                <select name="topic" required>
+                  <option value="">Kies…</option>
+                  <option>Pups (beschikbaarheid / wachtlijst)</option>
+                  <option>Trimsalon (afspraak)</option>
+                  <option>Opvang (intake / logeren)</option>
+                  <option>Algemene vraag</option>
+                </select>
+              </label>
+
+              <label>
+                Bericht
+                <textarea
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Vertel kort wat je zoekt…"
+                ></textarea>
+              </label>
+
+              <button class="btn btn-primary" type="submit">Verstuur</button>
+              <p
+                class="form-note"
+                id="formNote"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </form>
+          </div>
+
+          <aside class="contact-side">
+            <div class="side-box">
+              <h3>Snelle info</h3>
+              <ul class="mini-list">
+                <li><strong>Regio:</strong> Vlaanderen (voorbeeld)</li>
+                <li><strong>Open:</strong> Ma–Za 09:00–18:00</li>
+                <li><strong>Telefoon:</strong> +32 000 00 00 00</li>
+              </ul>
+            </div>
+
+            <div class="side-box">
+              <h3>WhatsApp</h3>
+              <p>
+                Maak het de klant makkelijk: zet hier een directe WhatsApp link.
+              </p>
+              <a class="btn btn-ghost btn-block" href="#" aria-disabled="true"
+                >WhatsApp (placeholder)</a
+              >
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Modern Doodles</strong>
+          <p class="muted">Doodlepups • Trimsalon • Opvang</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Cookies</a>
+          <a href="#">Voorwaarden</a>
+        </div>
+
+        <p class="muted">
+          © <span id="year"></span> Modern Doodles. Demo template.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

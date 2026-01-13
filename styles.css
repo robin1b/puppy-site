@@ -1,0 +1,1273 @@
+/* =======================================================================
+   THEME: Warm Beige / Cocoa Brown (JourrDoodles vibe)
+   - Layout blijft identiek
+   - Alleen kleurgebruik + typografie consistent gemaakt
+   - Alles via variabelen (makkelijk tweaken)
+   ======================================================================= */
+
+/* ===== Google Fonts =====
+   - Handlee: handgeschreven headings zoals mockup
+   - Nunito: zachte body tekst
+*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Handlee&display=swap");
+
+/* =======================================================================
+   1) CSS Variables (Design Tokens)
+   ======================================================================= */
+:root {
+  /* --- Typography --- */
+  --font-body: "Nunito", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Arial;
+  --font-head: "Handlee", "Nunito", ui-sans-serif, system-ui;
+
+  /* --- Backgrounds --- */
+  --bg: #f3ece6; /* pagina achtergrond (warm beige) */
+  --bg-2: #efe6de; /* secundaire beige (sections) */
+  --surface: #ffffff; /* witte surface (bv. section-muted) */
+  --card: #f7f1eb; /* kaart achtergrond (warm) */
+  --card-2: #ffffff; /* kaart achtergrond (wit) */
+
+  /* --- Text --- */
+  --text: #2b2420; /* hoofdtekst (donker warm bruin) */
+  --text-2: #3a312c; /* iets lichter voor sub-koppen */
+  --muted: #6e6159; /* subtiele tekst (bruin-grijs) */
+  --muted-2: #85776e; /* nog subtieler */
+  --on-dark: #f5efe9; /* tekst op donkere achtergrond */
+
+  /* --- Brand / Accents (Cocoa / Latte) --- */
+  --primary: #7a5a49; /* cocoa */
+  --primary-dark: #644739; /* donkerder cocoa */
+  --primary-soft: rgba(122, 90, 73, 0.16);
+
+  /* --- Secondary (optioneel, subtiel) --- */
+  --secondary: #7f8f86; /* zachte salie (heel subtiel) */
+  --secondary-dark: #6b7c72;
+  --secondary-soft: rgba(127, 143, 134, 0.16);
+
+  /* --- Utility colors (status) --- */
+  --success-bg: rgba(34, 197, 94, 0.12);
+  --success-bd: rgba(34, 197, 94, 0.24);
+  --success-tx: #15803d;
+
+  --warn-bg: rgba(245, 158, 11, 0.14);
+  --warn-bd: rgba(245, 158, 11, 0.26);
+  --warn-tx: #92400e;
+
+  --neutral-bg: rgba(148, 163, 184, 0.2);
+  --neutral-bd: rgba(100, 116, 139, 0.25);
+  --neutral-tx: #4b5563;
+
+  /* --- Borders / Shadows --- */
+  --border: rgba(43, 36, 32, 0.1); /* standaard border */
+  --border-2: rgba(43, 36, 32, 0.16); /* iets zwaarder */
+  --shadow-sm: 0 10px 22px rgba(43, 36, 32, 0.08);
+  --shadow-md: 0 16px 32px rgba(43, 36, 32, 0.1);
+  --shadow-lg: 0 18px 36px rgba(43, 36, 32, 0.12);
+
+  /* --- Radius --- */
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 22px;
+  --r-xl: 26px;
+  --r-pill: 999px;
+
+  /* --- Focus ring (geen blauw) --- */
+  --focus: rgba(122, 90, 73, 0.45);
+}
+
+/* =======================================================================
+   2) Reset & Base
+   ======================================================================= */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Headings: handgeschreven zoals mockup */
+h1,
+h2,
+h3 {
+  font-family: var(--font-head);
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+/* Standaard muted tekst */
+.lead,
+.section-head p,
+.muted {
+  color: var(--muted);
+}
+
+/* Screenreader utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link (accessibility) */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  background: var(--surface);
+  padding: 10px 12px;
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-sm);
+}
+.skip-link:focus {
+  left: 12px;
+  z-index: 9999;
+}
+
+/* =======================================================================
+   3) Layout Helpers
+   ======================================================================= */
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 64px 0;
+}
+
+/* "Muted" section = wit blok */
+.section-muted {
+  background: var(--surface);
+}
+
+.section-head {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: clamp(22px, 2.2vw, 30px);
+  letter-spacing: -0.02em;
+}
+
+.section-head p {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--muted);
+}
+
+/* =======================================================================
+   4) Header
+   ======================================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(243, 236, 230, 0.78);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header.is-elevated {
+  box-shadow: 0 12px 30px rgba(43, 36, 32, 0.12);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-text strong {
+  display: block;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.brand-text small {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 1px;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  padding: 10px 10px;
+  border-radius: var(--r-sm);
+  color: var(--text-2);
+  font-size: 14px;
+}
+
+.nav-link:hover {
+  background: rgba(43, 36, 32, 0.05);
+}
+
+/* Active link = cocoa highlight */
+.nav-link.is-active {
+  background: rgba(122, 90, 73, 0.12);
+  color: var(--primary);
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-toggle-bars {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+  margin: 0 auto;
+  position: relative;
+}
+
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+}
+
+.nav-toggle-bars::before {
+  top: -6px;
+}
+.nav-toggle-bars::after {
+  top: 6px;
+}
+
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* =======================================================================
+   5) Buttons (pill style, warm palette)
+   ======================================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.05s ease, box-shadow 0.2s ease, background 0.2s ease,
+    border-color 0.2s ease;
+  user-select: none;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--surface);
+  box-shadow: 0 14px 26px rgba(122, 90, 73, 0.22);
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+/* Light button = latte beige */
+.btn-light {
+  background: #f5ede6;
+  color: var(--text);
+  border-color: rgba(122, 90, 73, 0.18);
+  box-shadow: var(--shadow-sm);
+}
+.btn-light:hover {
+  background: #f0e6de;
+  border-color: rgba(122, 90, 73, 0.28);
+}
+
+/* Ghost = zachte cocoa tint */
+.btn-ghost {
+  background: rgba(122, 90, 73, 0.08);
+  border-color: rgba(122, 90, 73, 0.16);
+  color: var(--primary);
+}
+.btn-ghost:hover {
+  background: rgba(122, 90, 73, 0.12);
+  border-color: rgba(122, 90, 73, 0.22);
+}
+
+.btn-sm {
+  padding: 8px 12px;
+  border-radius: var(--r-md);
+  font-size: 13px;
+}
+
+/* =======================================================================
+   6) Hero
+   ======================================================================= */
+.hero {
+  position: relative;
+  padding: 48px 0 32px;
+  overflow: hidden;
+}
+
+/* Hero background: GEEN BLAUW.
+   Zachte cocoa + latte + heel subtiel salie als extra diepte. */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      900px 520px at 12% 18%,
+      rgba(122, 90, 73, 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      860px 520px at 88% 34%,
+      rgba(127, 143, 134, 0.14),
+      transparent 62%
+    ),
+    linear-gradient(180deg, var(--bg), var(--bg-2) 70%, var(--bg));
+  z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.badge {
+  display: inline-flex;
+  background: rgba(43, 36, 32, 0.04);
+  border: 1px solid rgba(43, 36, 32, 0.06);
+  padding: 6px 10px;
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  color: var(--text-2);
+  font-size: 13px;
+  margin: 0 0 12px;
+}
+
+.hero-content h1 {
+  margin: 0 0 10px;
+  font-size: clamp(28px, 3.2vw, 44px);
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+/* Accent in headline: cocoa (geen blauw) */
+.accent {
+  color: var(--primary);
+}
+
+.lead {
+  margin: 0 0 18px;
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+/* Stats cards */
+.hero-stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 12px 14px;
+  box-shadow: var(--shadow-sm);
+  min-width: 160px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 16px;
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+/* Right-side hero card */
+.hero-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.hero-card-top {
+  padding: 16px 16px 10px;
+}
+
+.hero-card-top h2 {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.hero-card-top p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Quick links */
+.quick-grid {
+  display: grid;
+  gap: 10px;
+  padding: 0 16px 16px;
+}
+
+.quick-item {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 10px;
+  padding: 12px;
+  border-radius: var(--r-md);
+  background: rgba(43, 36, 32, 0.03);
+  border: 1px solid rgba(43, 36, 32, 0.06);
+}
+
+/* Hover: cocoa soft (geen blauw) */
+.quick-item:hover {
+  background: rgba(122, 90, 73, 0.08);
+  border-color: rgba(122, 90, 73, 0.16);
+}
+
+.qi-ico {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-sm);
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.qi-title {
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.qi-sub {
+  color: var(--muted);
+  font-size: 12.5px;
+  margin-top: 2px;
+}
+
+.hero-card-actions {
+  padding: 0 16px 16px;
+  display: grid;
+  gap: 10px;
+}
+
+/* =======================================================================
+   7) Service Cards
+   ======================================================================= */
+.cards-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-md);
+}
+
+/* Icon block: cocoa soft (geen blauw) */
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: var(--primary-soft);
+  border: 1px solid rgba(122, 90, 73, 0.22);
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+/* Checklist */
+.checklist {
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  color: var(--text-2);
+  font-size: 14px;
+}
+
+.checklist li {
+  padding-left: 24px;
+  position: relative;
+}
+
+/* Keep green checkmark (success) — dit is geen "blauw" en past prima */
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: var(--success-bg);
+  border: 1px solid rgba(34, 197, 94, 0.22);
+  color: var(--success-tx);
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.checklist.large {
+  font-size: 15px;
+  gap: 10px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* =======================================================================
+   8) Pup Grid
+   ======================================================================= */
+.pup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.pup-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.pup-card img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  background: #e7ded6; /* warm placeholder i.p.v. blauw-grijs */
+}
+
+.pup-body {
+  padding: 14px;
+}
+
+.pup-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.pup-body h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.pup-body p {
+  margin: 6px 0 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Status pills */
+.pill {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--border);
+  background: rgba(43, 36, 32, 0.03);
+  color: var(--text-2);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.available {
+  background: var(--success-bg);
+  border-color: var(--success-bd);
+  color: var(--success-tx);
+}
+
+.option {
+  background: var(--warn-bg);
+  border-color: var(--warn-bd);
+  color: var(--warn-tx);
+}
+
+.reserved {
+  background: var(--neutral-bg);
+  border-color: var(--neutral-bd);
+  color: var(--neutral-tx);
+}
+
+/* Inline CTA band (donker warm i.p.v. blauw) */
+.inline-cta {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: #3a2b23; /* warme donkere cocoa */
+  color: var(--on-dark);
+  border-radius: var(--r-lg);
+  padding: 18px;
+}
+
+.inline-cta h3 {
+  margin: 0 0 4px;
+  color: #fff;
+}
+
+.inline-cta p {
+  margin: 0;
+  color: rgba(245, 239, 233, 0.85);
+}
+
+/* =======================================================================
+   9) About
+   ======================================================================= */
+.about {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.about-text h2 {
+  margin: 0 0 10px;
+  font-size: clamp(22px, 2.2vw, 30px);
+}
+
+.about-text p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.about-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.about-media img {
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+  min-height: 320px;
+  background: #e7ded6; /* warm placeholder */
+}
+
+/* =======================================================================
+   10) Carousel (Reviews)
+   ======================================================================= */
+.carousel {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  gap: 10px;
+  align-items: center;
+}
+
+.car-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  font-size: 22px;
+  color: var(--text);
+}
+
+.car-track {
+  display: flex;
+  gap: 14px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.review {
+  min-width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-md);
+}
+
+/* Stars blijven goud */
+.stars {
+  color: #d9a441;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.review p {
+  margin: 10px 0 10px;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.who {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.rating-row {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rating-badge {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.rating-badge strong {
+  font-size: 18px;
+}
+.rating-badge span {
+  color: var(--muted);
+  font-weight: 700;
+}
+.rating-badge small {
+  margin-left: 10px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* =======================================================================
+   11) CTA Band (geen blauw gradient)
+   ======================================================================= */
+.cta-band {
+  /* Warm cocoa gradient met latte highlight */
+  background: radial-gradient(
+      900px 420px at 18% 15%,
+      rgba(245, 237, 230, 0.2),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 420px at 80% 20%,
+      rgba(122, 90, 73, 0.28),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #3a2b23, #2f241e);
+  color: var(--on-dark);
+  padding: 54px 0;
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.cta-inner h2 {
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: clamp(22px, 2.2vw, 30px);
+}
+
+.cta-inner p {
+  margin: 0;
+  color: rgba(245, 239, 233, 0.85);
+  max-width: 70ch;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* =======================================================================
+   12) Info blocks
+   ======================================================================= */
+.info-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.info {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-md);
+}
+
+.info h3 {
+  margin: 0 0 8px;
+}
+.info p {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+/* Text link: cocoa (geen blauw) */
+.text-link {
+  color: var(--primary);
+  font-weight: 800;
+}
+.text-link:hover {
+  text-decoration: underline;
+}
+
+/* =======================================================================
+   13) Contact
+   ======================================================================= */
+.contact {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-md);
+}
+
+.contact-card h2 {
+  margin: 0 0 6px;
+}
+.contact-card p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+/* Inputs: warm border/shadow */
+input,
+select,
+textarea {
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  background: var(--surface);
+  box-shadow: 0 10px 22px rgba(43, 36, 32, 0.06);
+  color: var(--text);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-note {
+  margin: 0;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.contact-side {
+  display: grid;
+  gap: 12px;
+}
+
+.side-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+.side-box h3 {
+  margin: 0 0 8px;
+}
+.side-box p {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+.mini-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-2);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* =======================================================================
+   14) Footer
+   ======================================================================= */
+.site-footer {
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  background: rgba(243, 236, 230, 0.55);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: flex;
+  gap: 12px;
+  color: var(--muted);
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* =======================================================================
+   15) Responsive
+   ======================================================================= */
+@media (max-width: 980px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .header-cta {
+    display: none;
+  }
+  .cards-3,
+  .pup-grid,
+  .info-3 {
+    grid-template-columns: 1fr;
+  }
+  .about,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+  .cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .rating-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 820px) {
+  .nav-toggle {
+    display: inline-grid;
+    place-items: center;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 64px;
+    right: 20px;
+    width: min(320px, calc(100vw - 40px));
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 10px;
+    box-shadow: var(--shadow-lg);
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .nav-menu.is-open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 12px 12px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   HERO PHOTO BACKGROUND (animatie: fade + zoom + blur-out)
+   - Geen layout wijziging, alleen background layer
+   ========================================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* container met foto */
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* de foto zelf */
+.hero-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* Start wat warmer/soft */
+  filter: blur(10px) saturate(1.08) contrast(1.02);
+  transform: scale(1.14);
+
+  /* Animaties */
+  animation: heroReveal 1200ms ease-out forwards,
+    heroKenBurns 12s ease-in-out infinite alternate;
+}
+
+/* Zachte warm overlay + vignette (lezerlijkheid) */
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      900px 520px at 10% 20%,
+      rgba(245, 237, 230, 0.35),
+      transparent 60%
+    ),
+    radial-gradient(
+      860px 520px at 90% 30%,
+      rgba(122, 90, 73, 0.22),
+      transparent 62%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(243, 236, 230, 0.72),
+      rgba(243, 236, 230, 0.4) 55%,
+      rgba(243, 236, 230, 0.74)
+    );
+}
+
+/* Subtiele film grain (optioneel, ziet er echt nice uit) */
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+  animation: grainMove 8s steps(10) infinite;
+}
+
+/* Zorg dat inhoud boven de foto blijft */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animatie 1: blur-out + fade-in */
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    filter: blur(14px) saturate(1.05);
+    transform: scale(1.18);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px) saturate(1.08) contrast(1.02);
+    transform: scale(1.08);
+  }
+}
+
+/* Animatie 2: Ken Burns (heel subtiel in/uit zoomen) */
+@keyframes heroKenBurns {
+  from {
+    transform: scale(1.08) translate3d(0px, 0px, 0);
+  }
+  to {
+    transform: scale(1.13) translate3d(-10px, -8px, 0);
+  }
+}
+
+/* Grain mini beweging */
+@keyframes grainMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-4px, 3px);
+  }
+  50% {
+    transform: translate(3px, -4px);
+  }
+  75% {
+    transform: translate(-2px, -2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Accessibility: respecteer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-media img {
+    animation: none;
+    filter: blur(0px) saturate(1.05);
+    transform: scale(1.06);
+  }
+  .hero-grain {
+    animation: none;
+  }
+}
