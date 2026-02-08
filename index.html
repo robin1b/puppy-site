@@ -1,19 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Doodlepups, trimsalon en opvang – modern, warm en betrouwbaar."
+      content="Cutie doodle — Australian Labradoodles, trimsalon en opvang."
     />
-    <title>Cutie Doodles — Pups, Trimsalon & Opvang</title>
+    <title>Cutie doodle — Australian Labradoodles • Trimsalon • Opvang</title>
 
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <!-- Skip link -->
     <a class="skip-link" href="#main">Ga naar inhoud</a>
 
     <!-- Header -->
@@ -22,8 +21,8 @@
         <a class="brand" href="#top" aria-label="Home">
           <span class="brand-mark" aria-hidden="true">🐶</span>
           <span class="brand-text">
-            <strong>Cutie Doodles</strong>
-            <small>Pups • Trimsalon • Opvang</small>
+            <strong>Cutie doodle</strong>
+            <small>Australian Labradoodles • Trimsalon • Opvang</small>
           </span>
         </a>
 
@@ -39,8 +38,8 @@
           </button>
 
           <div class="nav-menu" id="navMenu">
-            <a class="nav-link" href="#pups">Pups</a>
-            <a class="nav-link" href="#verzorging">Verzorging</a>
+            <a class="nav-link" href="#nestje">Nestje</a>
+            <a class="nav-link" href="#verzorging">Trimsalon</a>
             <a class="nav-link" href="#opvang">Opvang</a>
             <a class="nav-link" href="#over-ons">Over ons</a>
             <a class="nav-link" href="#reviews">Reviews</a>
@@ -49,6 +48,7 @@
         </nav>
 
         <div class="header-cta">
+          <!-- Taal switch (UI, vertaling later uitbreiden) -->
           <div class="lang-switch" aria-label="Taal kiezen">
             <button
               class="lang-btn"
@@ -57,7 +57,7 @@
               aria-pressed="true"
               title="Nederlands"
             >
-              🇳🇱
+              NL
             </button>
             <button
               class="lang-btn"
@@ -66,7 +66,7 @@
               aria-pressed="false"
               title="English"
             >
-              🇬🇧
+              EN
             </button>
             <button
               class="lang-btn"
@@ -75,7 +75,7 @@
               aria-pressed="false"
               title="Español"
             >
-              🇪🇸
+              ES
             </button>
           </div>
 
@@ -87,8 +87,10 @@
     <main id="main">
       <!-- Hero -->
       <section class="hero" id="top">
-        <!-- Foto background + overlays -->
-
+        <!-- ✅ WERKENDE HERO BACKGROUND:
+             Gebruik exact dezelfde bestandsnaam als je oude werkende versie.
+             Zorg dat dit bestand bestaat: /assets/hero.png
+        -->
         <div class="hero-media" aria-hidden="true">
           <img src="assets/hero.png" alt="" />
           <span class="hero-vignette"></span>
@@ -98,19 +100,23 @@
         <div class="container hero-inner">
           <div class="hero-content">
             <p class="badge">Huiselijk • Transparant • Nazorg</p>
+
             <h1>
-              Je kunt geen geluk kopen,<br /><span class="accent"
-                >maar je kunt wel een doodlepup verwelkomen.</span
-              >
+              Australian Labradoodles<br />
+              <span class="accent">met liefde grootgebracht.</span>
             </h1>
+
             <p class="lead">
-              Focus op welzijn, socialisatie en duidelijke communicatie. Ook
-              voor trimsessies en opvang ben je welkom.
+              Bij Cutie doodle staan welzijn, socialisatie en duidelijke
+              communicatie centraal. Ook voor trimsessies en opvang ben je
+              welkom.
             </p>
 
             <div class="hero-actions">
-              <a class="btn btn-light" href="#pups">Bekijk beschikbare pups</a>
-              <a class="btn btn-primary" href="#boeken">Boek een afspraak</a>
+              <a class="btn btn-light" href="#nestje">Aankomend nestje</a>
+              <a class="btn btn-primary" href="#contact"
+                >Inschrijven wachtlijst</a
+              >
             </div>
 
             <div class="hero-stats" aria-label="Kerncijfers">
@@ -119,53 +125,17 @@
                 <span>Google score</span>
               </div>
               <div class="stat">
-                <strong>120+</strong>
-                <span>Trimsessies/jaar</span>
+                <strong>Huiselijk</strong>
+                <span>Kleinschalige werking</span>
               </div>
               <div class="stat">
-                <strong>Huiselijk</strong>
-                <span>Opvang in kleine groep</span>
+                <strong>Australian</strong>
+                <span>Labradoodle focus</span>
               </div>
             </div>
           </div>
 
-          <div class="hero-card" role="region" aria-label="Snelle acties">
-            <div class="hero-card-top">
-              <h2>Snel kiezen</h2>
-              <p>Waar kunnen we je mee helpen?</p>
-            </div>
-
-            <div class="quick-grid">
-              <a class="quick-item" href="#pups">
-                <span class="qi-ico" aria-hidden="true">🐾</span>
-                <span class="qi-title">Doodlepups</span>
-                <span class="qi-sub"
-                  >Beschikbaar, nestplanning, wachtlijst</span
-                >
-              </a>
-              <a class="quick-item" href="#verzorging">
-                <span class="qi-ico" aria-hidden="true">✂️</span>
-                <span class="qi-title">Trimsalon</span>
-                <span class="qi-sub">Wassen, knippen, ontwollen, nagels</span>
-              </a>
-              <a class="quick-item" href="#opvang">
-                <span class="qi-ico" aria-hidden="true">🏡</span>
-                <span class="qi-title">Opvang</span>
-                <span class="qi-sub"
-                  >Dagopvang & logeeropvang met aandacht</span
-                >
-              </a>
-            </div>
-
-            <div class="hero-card-actions">
-              <a class="btn btn-primary btn-block" href="#boeken"
-                >Plan trim / intake</a
-              >
-              <a class="btn btn-ghost btn-block" href="#contact"
-                >Stel een vraag</a
-              >
-            </div>
-          </div>
+          <!-- Snelle kiezer is verwijderd (zoals feedback) -->
         </div>
       </section>
 
@@ -174,57 +144,88 @@
         <div class="container">
           <div class="section-head">
             <h2>Alles onder één dak</h2>
-            <p>
-              Modern en overzichtelijk — pups, verzorging en opvang met dezelfde
-              zorgstandaard.
-            </p>
+            <p>Nestje-info, trimsalon en opvang met dezelfde zorgstandaard.</p>
           </div>
 
           <div class="cards-3">
-            <article class="card" id="pups">
-              <div class="card-icon" aria-hidden="true">🐶</div>
-              <h3>Doodlepups</h3>
+            <!-- Nestje / pups -->
+            <article class="card" id="nestje">
+              <div class="card-media">
+                <img
+                  src="assets/icon-nest.jpg"
+                  alt="Nestje Australian Labradoodle pups"
+                  loading="lazy"
+                />
+              </div>
+
+              <h3>Aankomend nestje</h3>
               <p>
-                Beschikbaarheid, nestplanning en een duidelijke
-                wachtlijstprocedure.
+                Pupjes worden op voorhand gereserveerd via aanvraag. We werken
+                met een wachtlijst en plannen per nestje.
               </p>
+
               <ul class="checklist">
                 <li>Huiselijke socialisatie</li>
-                <li>Transparant adoptieproces</li>
-                <li>Nazorg en begeleiding</li>
+                <li>Transparant proces</li>
+                <li>Nazorg & begeleiding</li>
               </ul>
+
               <div class="card-actions">
-                <a class="btn btn-primary" href="#beschikbaar">Bekijk pups</a>
-                <a class="btn btn-ghost" href="#wachtlijst">Wachtlijst</a>
+                <a class="btn btn-primary" href="#nestje-info">Meer info</a>
+                <a class="btn btn-ghost" href="#contact">Wachtlijst</a>
               </div>
             </article>
 
+            <!-- Trimsalon -->
             <article class="card" id="verzorging">
-              <div class="card-icon" aria-hidden="true">🧴</div>
+              <div class="card-media">
+                <img
+                  src="assets/icon-trim.jpg"
+                  alt="Doodle in bad (trimsalon)"
+                  loading="lazy"
+                />
+              </div>
+
               <h3>Trimsalon</h3>
               <p>
-                Van puppy-kennismaking tot onderhoudsschema’s en complete trims.
+                Van puppy-kennismaking tot onderhoudsschema’s en complete trims:
+                rustig, liefdevol en professioneel.
               </p>
+
               <ul class="checklist">
                 <li>Wassen & föhnen</li>
-                <li>Knippen/ontwollen</li>
+                <li>Knippen / ontwollen</li>
                 <li>Nagels & oogjes</li>
               </ul>
+
               <div class="card-actions">
                 <a class="btn btn-primary" href="#boeken">Boek trimsessie</a>
                 <a class="btn btn-ghost" href="#prijzen">Prijzen</a>
               </div>
             </article>
 
+            <!-- Opvang -->
             <article class="card" id="opvang">
-              <div class="card-icon" aria-hidden="true">🦴</div>
+              <div class="card-media">
+                <img
+                  src="assets/icon-opvang.jpg"
+                  alt="Slapende doodle (opvang)"
+                  loading="lazy"
+                />
+              </div>
+
               <h3>Dag- & logeeropvang</h3>
-              <p>Kleinschalige opvang met vaste routines en huiselijke rust.</p>
+              <p>
+                Kleinschalige opvang met vaste routines, rustmomenten en
+                huiselijke aandacht.
+              </p>
+
               <ul class="checklist">
                 <li>Proefmoment / intake</li>
                 <li>Vaccinatie-eisen</li>
-                <li>Updates & foto’s (optioneel)</li>
+                <li>Updates (optioneel)</li>
               </ul>
+
               <div class="card-actions">
                 <a class="btn btn-primary" href="#opvang-info"
                   >Lees voorwaarden</a
@@ -238,77 +239,30 @@
         </div>
       </section>
 
-      <!-- Available pups (example grid) -->
+      <!-- Nestje info (i.p.v. beschikbare pups) -->
       <section
         class="section section-muted"
-        id="beschikbaar"
-        aria-label="Beschikbare pups"
+        id="nestje-info"
+        aria-label="Nestje info"
       >
         <div class="container">
           <div class="section-head">
-            <h2>Beschikbare pups</h2>
-            <p>Voorbeeldweergave — koppel dit later aan echte data of CMS.</p>
-          </div>
-
-          <div class="pup-grid">
-            <article class="pup-card">
-              <img
-                src="assets/pup1.png"
-                alt="Doodlepup in de tuin"
-                loading="lazy"
-              />
-              <div class="pup-body">
-                <div class="pup-top">
-                  <h3>Nova</h3>
-                  <span class="pill available">Beschikbaar</span>
-                </div>
-                <p>Speels, mensgericht. Geboren: 12/08</p>
-                <a class="btn btn-ghost btn-sm" href="#contact">Interesse</a>
-              </div>
-            </article>
-
-            <article class="pup-card">
-              <img
-                src="assets/pup2.png"
-                alt="Doodlepup op een zachte deken"
-                loading="lazy"
-              />
-              <div class="pup-body">
-                <div class="pup-top">
-                  <h3>Milo</h3>
-                  <span class="pill option">Optie</span>
-                </div>
-                <p>Rustig karakter. Geboren: 12/08</p>
-                <a class="btn btn-ghost btn-sm" href="#contact">Interesse</a>
-              </div>
-            </article>
-
-            <article class="pup-card">
-              <img
-                src="assets/pup3.png"
-                alt="Doodlepup die naar de camera kijkt"
-                loading="lazy"
-              />
-              <div class="pup-body">
-                <div class="pup-top">
-                  <h3>Luna</h3>
-                  <span class="pill reserved">Gereserveerd</span>
-                </div>
-                <p>Sociaal en zacht. Geboren: 12/08</p>
-                <a class="btn btn-ghost btn-sm" href="#contact">Meer info</a>
-              </div>
-            </article>
+            <h2>Aankomend nestje</h2>
+            <p>
+              Voorbeeldsectie: hier komen de echte details (ouders, planning,
+              updates en foto’s) zodra aangeleverd.
+            </p>
           </div>
 
           <div class="inline-cta" id="wachtlijst">
             <div>
-              <h3>Op de wachtlijst?</h3>
+              <h3>Wachtlijst / aanvraag</h3>
               <p>
-                Vul het formulier in en we nemen contact op zodra er een match
-                is.
+                Vul het formulier in en we nemen contact op om te bekijken of er
+                een match is.
               </p>
             </div>
-            <a class="btn btn-primary" href="#contact">Aanmelden wachtlijst</a>
+            <a class="btn btn-light" href="#contact">Aanvraag indienen</a>
           </div>
         </div>
       </section>
@@ -319,16 +273,15 @@
           <div class="about-text">
             <h2>Over ons</h2>
             <p>
-              We bouwen aan een plek waar honden zich veilig voelen en baasjes
-              helder weten waar ze aan toe zijn. Dit is voorbeeldtekst: vervang
-              met het echte verhaal van je klant.
+              Dit is voorbeeldtekst: hier komen binnenkort de echte teksten +
+              foto’s van Mila en het verhaal van Cutie doodle.
             </p>
 
             <ul class="checklist large">
               <li>Gezondheid & welzijn voorop</li>
               <li>Huiselijke socialisatie</li>
               <li>Persoonlijke nazorg</li>
-              <li>Transparant adoptieprocAes</li>
+              <li>Transparante werkwijze</li>
             </ul>
 
             <div class="about-actions">
@@ -347,12 +300,12 @@
         </div>
       </section>
 
-      <!-- Reviews (carousel) -->
+      <!-- Reviews -->
       <section class="section section-muted" id="reviews" aria-label="Reviews">
         <div class="container">
           <div class="section-head">
             <h2>Klanten aan het woord</h2>
-            <p>Swipe/klik door de testimonials (demo met dummy reviews).</p>
+            <p>Demo reviews — echte reviews kunnen later gekoppeld worden.</p>
           </div>
 
           <div class="carousel" data-carousel>
@@ -369,8 +322,8 @@
               <article class="review">
                 <div class="stars" aria-label="5 sterren">★★★★★</div>
                 <p>
-                  “Super duidelijk proces en veel nazorg. Onze pup doet het
-                  geweldig!”
+                  “Super duidelijk proces en veel nazorg. Alles voelt heel
+                  huiselijk en warm.”
                 </p>
                 <span class="who">— Sarah</span>
               </article>
@@ -378,7 +331,8 @@
               <article class="review">
                 <div class="stars" aria-label="5 sterren">★★★★★</div>
                 <p>
-                  “Trimsessie was rustig en professioneel. Mooie afwerking!”
+                  “Trimsessie was rustig en professioneel. Mooie afwerking,
+                  aanrader!”
                 </p>
                 <span class="who">— Kevin</span>
               </article>
@@ -386,8 +340,8 @@
               <article class="review">
                 <div class="stars" aria-label="5 sterren">★★★★★</div>
                 <p>
-                  “Logeeropvang voelde huiselijk. Kreeg ook een foto-update,
-                  top.”
+                  “Logeeropvang voelde huiselijk. Fijn dat je af en toe een
+                  update krijgt.”
                 </p>
                 <span class="who">— Anke</span>
               </article>
@@ -421,8 +375,8 @@
           <div>
             <h2>Klaar om te plannen?</h2>
             <p>
-              Trimbeurt, intake voor opvang of interesse in een pup: stuur ons
-              een bericht.
+              Trimbeurt, intake voor opvang of pup-aanvraag: stuur ons een
+              bericht.
             </p>
           </div>
           <div class="cta-actions">
@@ -437,17 +391,22 @@
         <div class="container">
           <div class="section-head">
             <h2>Praktische info</h2>
+            <p>
+              Duidelijke blokken met beleid en werkwijze (later verfijnen met
+              echte teksten).
+            </p>
           </div>
 
           <div class="info-3" id="prijzen">
             <article class="info">
-              <h3>Werkwijze pups</h3>
+              <h3>Werkwijze pup-aanvraag</h3>
               <p>
-                Kennismaking, reservatie, contract en ophaaldag. Heldere
-                stappen.
+                Aanvraag, kennismaking, wachtlijst, updates per nestje en
+                nazorg.
               </p>
               <a class="text-link" href="#contact">Vraag de stappenlijst →</a>
             </article>
+
             <article class="info">
               <h3>Trimsalon beleid</h3>
               <p>
@@ -455,6 +414,7 @@
               </p>
               <a class="text-link" href="#contact">Ontvang prijslijst →</a>
             </article>
+
             <article class="info">
               <h3>Opvangeisen</h3>
               <p>
@@ -469,11 +429,11 @@
       <!-- Contact -->
       <section class="section section-muted" id="contact" aria-label="Contact">
         <div class="container contact">
-          <div class="contact-card">
+          <div class="contact-card" id="contact-card">
             <h2>Contact</h2>
             <p>
-              Vul dit formulier in (demo). In productie koppel je dit aan e-mail
-              / backend / CRM.
+              Vul het formulier in. In productie kan dit gekoppeld worden aan
+              e-mail / CRM / adminpaneel.
             </p>
 
             <form class="form" id="contactForm">
@@ -497,7 +457,7 @@
                 Waarover gaat het?
                 <select name="topic" required>
                   <option value="">Kies…</option>
-                  <option>Pups (beschikbaarheid / wachtlijst)</option>
+                  <option>Pup-aanvraag / wachtlijst</option>
                   <option>Trimsalon (afspraak)</option>
                   <option>Opvang (intake / logeren)</option>
                   <option>Algemene vraag</option>
@@ -529,16 +489,15 @@
               <h3>Snelle info</h3>
               <ul class="mini-list">
                 <li><strong>Regio:</strong> Vlaanderen (voorbeeld)</li>
-                <li><strong>Open:</strong> Ma–Za 09:00–18:00</li>
+                <!-- <li><strong>Open:</strong> Ma–Za 09:00–18:00</li> -->
                 <li><strong>Telefoon:</strong> +32 000 00 00 00</li>
+                <li><strong>mail:</strong> info@cutiedoodle.be</li>
               </ul>
             </div>
 
             <div class="side-box">
               <h3>WhatsApp</h3>
-              <p>
-                Maak het de klant makkelijk: zet hier een directe WhatsApp link.
-              </p>
+              <p>Later kan hier een directe WhatsApp-link komen.</p>
               <a class="btn btn-ghost btn-block" href="#" aria-disabled="true"
                 >WhatsApp (placeholder)</a
               >
@@ -552,8 +511,8 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <div>
-          <strong>Cutie Doodle</strong>
-          <p class="muted">Doodlepups • Trimsalon • Opvang</p>
+          <strong>Cutie doodle</strong>
+          <p class="muted">Australian Labradoodles • Trimsalon • Opvang</p>
         </div>
 
         <div class="footer-links">
@@ -563,7 +522,7 @@
         </div>
 
         <p class="muted">
-          © <span id="year"></span> cutie doodles. Demo template.
+          © <span id="year"></span> Cutie doodle. Demo template.
         </p>
       </div>
     </footer>

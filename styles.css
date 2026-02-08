@@ -7,7 +7,7 @@
 
 /* ===== Google Fonts =====
    - Handlee: handgeschreven headings zoals mockup
-   - Nunito: zachte body tekst
+   - Nunito: zachte comments sws GO 
 */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Handlee&display=swap");
 
@@ -16,8 +16,8 @@
    ======================================================================= */
 :root {
   /* --- Typography --- */
-  --font-body: "Nunito", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-    Roboto, Arial;
+  --font-body:
+    "Nunito", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
   --font-head: "Handlee", "Nunito", ui-sans-serif, system-ui;
 
   /* --- Backgrounds --- */
@@ -139,7 +139,7 @@ h3 {
   width: 1px;
   height: 1px;
   padding: 0;
-  margin: -1px;
+  margin: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -340,7 +340,10 @@ h3 {
   font-weight: 800;
   font-size: 14px;
   cursor: pointer;
-  transition: transform 0.05s ease, box-shadow 0.2s ease, background 0.2s ease,
+  transition:
+    transform 0.05s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
     border-color 0.2s ease;
   user-select: none;
 }
@@ -398,6 +401,9 @@ h3 {
   position: relative;
   padding: 48px 0 32px;
   overflow: hidden;
+
+  /* ✅ belangrijk: hero heeft altijd hoogte zodat de foto zichtbaar is */
+  min-height: 80vh;
 }
 
 /* Hero background: GEEN BLAUW.
@@ -405,7 +411,8 @@ h3 {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       900px 520px at 12% 18%,
       rgba(122, 90, 73, 0.18),
       transparent 60%
@@ -815,10 +822,19 @@ h3 {
   gap: 14px;
   overflow: hidden;
   scroll-behavior: smooth;
+
+  /* ✅ FIX: altijd netjes "snappen" per slide */
+  scroll-snap-type: x mandatory;
+
+  /* nice-to-have: voorkomt rare overscroll op mobile */
+  overscroll-behavior-x: contain;
 }
 
 .review {
-  min-width: 100%;
+  /* ✅ FIX: exact 1 slide breed (stabieler dan min-width) */
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
@@ -881,7 +897,8 @@ h3 {
    ======================================================================= */
 .cta-band {
   /* Warm cocoa gradient met latte highlight */
-  background: radial-gradient(
+  background:
+    radial-gradient(
       900px 420px at 18% 15%,
       rgba(245, 237, 230, 0.2),
       transparent 60%
@@ -1175,7 +1192,8 @@ textarea {
   transform: scale(1.14);
 
   /* Animaties */
-  animation: heroReveal 1200ms ease-out forwards,
+  animation:
+    heroReveal 1200ms ease-out forwards,
     heroKenBurns 12s ease-in-out infinite alternate;
 }
 
@@ -1183,7 +1201,8 @@ textarea {
 .hero-vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       900px 520px at 10% 20%,
       rgba(245, 237, 230, 0.35),
       transparent 60%
@@ -1270,4 +1289,62 @@ textarea {
   .hero-grain {
     animation: none;
   }
+}
+
+/* Service card image bovenaan (logo/foto per onderdeel) */
+.card-media {
+  width: 100%;
+  height: 120px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(43, 36, 32, 0.03);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 12px;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Taal switch in header */
+.lang-switch {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.lang-btn {
+  width: 36px;
+  height: 30px;
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  transition:
+    transform 0.05s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.lang-btn:hover {
+  background: rgba(122, 90, 73, 0.08);
+  border-color: rgba(122, 90, 73, 0.16);
+}
+
+.lang-btn[aria-pressed="true"] {
+  background: rgba(122, 90, 73, 0.12);
+  border-color: rgba(122, 90, 73, 0.22);
 }
